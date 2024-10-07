@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo6vq25abrnwh"]
+
+[ext_resource type="PackedScene" uid="uid://daqrjf3ddhk4b" path="res://player.tscn" id="1_k7ptf"]
+[ext_resource type="Script" path="res://main.gd" id="1_wei0p"]
+[ext_resource type="PackedScene" uid="uid://cx0f0tldanbbo" path="res://hud.tscn" id="3_mc36c"]
+[ext_resource type="PackedScene" uid="uid://dcl3m2ygjoq74" path="res://sound.tscn" id="4_tfl8x"]
+
+[sub_resource type="Curve2D" id="Curve2D_wc50c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Main" type="Node"]
+script = ExtResource("1_wei0p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.361416, 0.469054, 0.840002, 1)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_wc50c")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+
+[node name="Player" parent="." instance=ExtResource("1_k7ptf")]
+
+[node name="HUD" parent="." instance=ExtResource("3_mc36c")]
+
+[node name="Sound" parent="." instance=ExtResource("4_tfl8x")]
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
