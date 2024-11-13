@@ -9,9 +9,9 @@ func wait_sec(sec):
 
 # 攻撃力、防御力からダメージ値を計算
 func calc_damage(atk,def):
-	var min = ceil(atk*0.8)
-	var max = ceil(atk*1.2)
-	var dmg = randi_range(min,max) - def
+	var _min = ceil(atk*0.8)
+	var _max = ceil(atk*1.2)
+	var dmg = randi_range(_min,_max) - def
 	if dmg < DAMAGE_MIN:
 		dmg = DAMAGE_MIN
 	return dmg

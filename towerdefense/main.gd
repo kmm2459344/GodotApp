@@ -36,7 +36,7 @@ func _ready():
 	assert(n_camera!=null)
 	assert(n_hud!=null)
 	n_common=al_common
-	## n_sound=al_sound
+	n_sound=al_sound
 	n_hud.print_cost(LAUNCH_COST)
 	await game()
 	get_tree().change_scene_to_file("res://main.tscn")

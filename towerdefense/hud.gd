@@ -20,8 +20,8 @@ func print_cost( cost ):
 	n_cost.text="%02dP" % cost
 
 # スコアを表示
-func print_score( value, max):
-	n_score.text="%dP / %dP" % [value,max]
+func print_score( value, _max):
+	n_score.text="%dP / %dP" % [value,_max]
 
 # 「勝利」を表示
 func show_win():

@@ -46,3 +46,5 @@ theme_override_styles/background = SubResource("StyleBoxFlat_kcode")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qpjk4")
 value = 100.0
 show_percentage = false
+
+[connection signal="area_entered" from="CastleArea" to="." method="_on_castle_area_area_entered"]

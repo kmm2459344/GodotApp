@@ -40,7 +40,7 @@ func is_dead():
 	return hp<=0
 
 # Area2Dになにかか衝突した
-func _on_area_2d_area_entered(area):
+func _on_castle_area_area_entered(area):
 	if area.get_parent().is_player_side==is_player_side:
 		return
 	if area.name=="SoldierAttackArea":
