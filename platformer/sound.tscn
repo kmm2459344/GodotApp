@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgpcxyrjra20r"]
+
+[ext_resource type="Script" path="res://sound.gd" id="1_1u8q6"]
+[ext_resource type="AudioStream" uid="uid://c8yd0wr04rmwy" path="res://assets/PrettySky.ogg" id="2_odv6k"]
+[ext_resource type="AudioStream" uid="uid://c5w6jm0ewyhtc" path="res://assets/Jump.ogg" id="3_6meb8"]
+[ext_resource type="AudioStream" uid="uid://cfxvlate7rdsl" path="res://assets/Hit.ogg" id="4_frnot"]
+[ext_resource type="AudioStream" uid="uid://dxcciobakfd7i" path="res://assets/Coin.ogg" id="5_dak7b"]
+[ext_resource type="AudioStream" uid="uid://dbu0ovuum4knp" path="res://assets/Damage.ogg" id="6_i2665"]
+[ext_resource type="AudioStream" uid="uid://nkm7y5d5pllw" path="res://assets/Heal.ogg" id="7_3crte"]
+
+[node name="Sound" type="Node" node_paths=PackedStringArray("n_bgm", "n_se_list")]
+script = ExtResource("1_1u8q6")
+n_bgm = NodePath("AudioStreamPlayer")
+n_se_list = [NodePath("AudioStreamPlayer2"), NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer5"), NodePath("AudioStreamPlayer6")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_odv6k")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6meb8")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_frnot")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dak7b")
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_i2665")
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_3crte")
