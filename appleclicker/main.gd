@@ -96,6 +96,7 @@ func stop_timer():
 	n_sec_timer.stop()
 	n_tree_timer.stop()
 	
+	
 func add_apple(add):
 	apple_count += add
 	print_apple_text(apple_count)
