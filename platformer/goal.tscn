@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk0gsu6tv2jvb"]
+
+[ext_resource type="Texture2D" uid="uid://jp20k30mafun" path="res://assets/takarabako.png" id="1_y1oqk"]
+
+[node name="Goal" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y1oqk")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
