@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciirbx8fxe0a"]
+
+[ext_resource type="Script" path="res://test/hub_test.gd" id="1_pbd48"]
+[ext_resource type="PackedScene" uid="uid://g8xlubxif2cv" path="res://hud.tscn" id="2_qek33"]
+
+[node name="HubTest" type="Node"]
+script = ExtResource("1_pbd48")
+
+[node name="HUD" parent="." instance=ExtResource("2_qek33")]
