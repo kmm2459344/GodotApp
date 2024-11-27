@@ -2,9 +2,9 @@ extends Node
 
 var bullet_scene : PackedScene ###= preload("res://bullet.tscn")
 var enemy_scene : Array[PackedScene]=[
-###	preload("res://enemy_01.tscn"),
-###	preload("res://enemy_02.tscn"),
-###	preload("res://enemy_03.tscn")
+preload("res://enemy_01.tscn"),
+preload("res://enemy_02.tscn"),
+preload("res://enemy_03.tscn")
 ]
 # エネミー種別
 enum{
@@ -29,20 +29,20 @@ enum{
 }
 
 func _ready():
-	while false: ###　あとで trueに差し替えます
+	while true: ###　あとで trueに差し替えます
 		n_player=null
 		await game()
 
 func game():
 	score=0
-	###	Hud.print_score(score)
+	Hud.print_score(score)
 	level_difficulty=0
 	is_play_out = false
-	###	Hud.start_title()
-	###	Sound.play_bgm(Sound.BGM_TITLE)
+	Hud.start_title()
+	Sound.play_bgm(Sound.BGM_TITLE)
 	await exec_scene("res://title.tscn")
-	###	Hud.start_level()
-	###	Sound.play_bgm(Sound.BGM_LEVEL)
+	Hud.start_level()
+	Sound.play_bgm(Sound.BGM_LEVEL)
 	await exec_scene("res://level.tscn")
 
 # シーンの実行
@@ -70,7 +70,7 @@ func create_enemy(id,pos,parent_node):
 # スコア加算
 func add_score():
 	score += 1
-	###	Hud.print_score(score)
+	Hud.print_score(score)
 # レベル難易度を加算
 func add_difficulty():
 	level_difficulty += 1
