@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bofdn7rd78fqn"]
+
+[ext_resource type="PackedScene" uid="uid://b0ir22d2p5adt" path="res://hud.tscn" id="1_muibt"]
+[ext_resource type="Script" path="res://test/hud_test.gd" id="1_ypunu"]
+
+[node name="HudTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ypunu")
+
+[node name="HUD" parent="." instance=ExtResource("1_muibt")]
